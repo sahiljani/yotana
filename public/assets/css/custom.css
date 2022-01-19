@@ -1,0 +1,8 @@
+.table-border-black{
+    border-color:#d8d8d8 !important;
+    }
+.notes{
+    display:block;
+    width:150px;
+    word-wrap:break-word;
+}
