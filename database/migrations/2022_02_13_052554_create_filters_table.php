@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddToAdmin extends Migration
+class CreateFiltersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class AddToAdmin extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-            $table->integer('role')->default(1);
+        Schema::create('filters', function (Blueprint $table) {
+            $table->id();
+            $table->longText('name');
+            $table->longText('img');
+            $table->longText('type');
+
+            $table->timestamps();
         });
     }
 
@@ -26,8 +30,6 @@ class AddToAdmin extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('filters');
     }
 }
